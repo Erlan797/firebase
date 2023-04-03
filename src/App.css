@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
 *{
     box-sizing: border-box;
 }
@@ -43,12 +44,14 @@ body{
     margin: 0 0 12px;
     font-size: 36px;
     font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
 }
 .login-card > h3 {
     margin: 0 0 30px;
     font-weight: 500;
     font-size: 16px;
     color: rgba(0, 0, 0, 0.38);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 .login-form{
     width: 100%;
@@ -62,6 +65,7 @@ body{
     height: 56px;
     padding: 0 16px;
     border-bottom: 8px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 .login-form > input{
     border: 2px solid #ebebeb;
@@ -79,4 +83,5 @@ body{
     height: 60px;
     margin-left: 40%;
     background-color: white;
+   
 }
