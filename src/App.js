@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Auth } from "./components/auth";
 import { auth, db } from "./config/firebase";
 import { addDoc, collection, deleteDoc, doc, getDocs, updateDoc } from "firebase/firestore";
+import './App.css'
 function App() {
   const [moiveList,setMovieList] = useState([]);
   const [newMovieTitle, setNewMovieTitle] = useState('');
@@ -32,7 +33,7 @@ function App() {
       }
         useEffect(() => {
       getMovieList();
-  }, [])
+  }, []);
   const onSubmitMovie = async () =>{
     try{await addDoc(moiveCollectionRef, 
       {title: newMovieTitle,
@@ -48,6 +49,8 @@ function App() {
   return (
     <>
     <div><Auth /></div>
+    {/* <div id="regis">Registration</div>
+    
     <div>
       <input placeholder="MovieTitle" 
       onChange={(e) => setNewMovieTitle(e.target.value)}/>
@@ -70,7 +73,7 @@ function App() {
           <button onClick={() => newTitle(movie.id)}>New Upload</button>
         </div>
       ))}
-    </div>
+    </div> */}
     </>
   );
 }

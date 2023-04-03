@@ -1,6 +1,7 @@
 import {auth, googleProvider} from '../config/firebase';
 import { createUserWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth';
 import { useState } from 'react';
+import {FcGoogle} from 'react-icons/fc';
 export const Auth = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -8,9 +9,11 @@ export const Auth = () => {
     const signIn = async () =>{
         try{
         await createUserWithEmailAndPassword(auth, email, password);
+        alert("Вы зашли в аккаунт!");
         } catch(err){
             console.error(err);
         }
+        
     }
     const signInWithGoogle = async () =>{
         try{
@@ -27,14 +30,26 @@ export const Auth = () => {
         }
     }
     return (
-        <div>
-            <input type="email" placeholder="Email...." 
-            onChange={(e) => setEmail(e.target.value)}/>
-            <input type='password' placeholder="Password...."
-            onChange={(e) => setPassword(e.target.value)}/>
-            <button onClick={signIn}>Sign in</button>
-            <button onClick={signInWithGoogle}> Sign in with Google</button>
-            <button onClick={logout}>Log ut</button>
-        </div>
+   <>
+   <div className='login-card'>
+    <h2>Registration</h2>
+    <h3>Enter your account</h3>
+    <form className='login-form'>
+        <input
+        type='email'
+        placeholder='Email'
+        onChange={(e) =>setEmail(e.target.value)}
+        />
+        <input 
+        type='password'
+        placeholder='Password'
+        onChange={(e) =>setPassword(e.target.value)}
+        />
+         <button onClick={signIn}>Sign in</button>
+         <button id='google'><FcGoogle /></button>
+    </form>
+   
+   </div>
+   </>
     )
 }
